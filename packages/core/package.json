@@ -1,5 +1,6 @@
 {
   "name": "@pouchlab/core-utils",
+  "version": "1.0.0",
    "main": "dist/index.js",
   "module": "index.ts",
   "types": "dist/index.d.ts",
