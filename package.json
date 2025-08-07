@@ -1,0 +1,21 @@
+{
+  "name": "pouchutils-mono",
+  "description": "pouchlabs utils for node and browser",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "app/*"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bunup": "^0.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "build": "bunup --dts=true",
+    "dev": "bunup --watch"
+  }
+}

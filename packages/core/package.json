@@ -1,0 +1,23 @@
+{
+  "name": "@pouchlab/core-utils",
+   "main": "dist/index.js",
+  "module": "index.ts",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "private": true,
+  "exports":{
+    ".":{
+      "import":"dist/index.js",
+      "types":"dist/index.d.ts",
+      "default":"dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "repository": {"url": "https://github.com/pouchlabs/putils"}
+}
