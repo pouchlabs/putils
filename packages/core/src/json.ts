@@ -18,9 +18,9 @@ let Json:Jsonobj = {
           var fnBody;
           if (value instanceof Function || typeof value == 'function') {
           fnBody = value.toString();
-            if (fnBody.length < 8 || fnBody.substring(0, 8) !== 'function') { //this is ES6 Arrow Function
-              return '_NuFrRa_' + fnBody;
-            }
+            // if (fnBody.length < 8 || fnBody.substring(0, 8) !== 'function') { //this is ES6 Arrow Function
+            //   return '_NuFrRa_' + fnBody;
+            // }
             return fnBody;
           }
           if (value instanceof RegExp) {
@@ -54,8 +54,8 @@ let Json:Jsonobj = {
           if (iso8061 && value.match(iso8061)) {
             return new Date(value);
           }
-          if (prefix === 'function') {
-            return eval('(' + value + ')');
+          if(value.startsWith("function") || value.startsWith("()") || value.startsWith("async")){
+            return eval(`(${value})`)
           }
           if (prefix === '_PxEgEr_') {
             return eval(value.slice(8));
@@ -79,6 +79,7 @@ let Json:Jsonobj = {
     
     
 } 
+
 
 export {Json}
 export default Json
